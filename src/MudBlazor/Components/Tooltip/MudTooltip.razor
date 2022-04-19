@@ -6,7 +6,9 @@
 	@if (TooltipContent != null || string.IsNullOrEmpty(Text) == false)
 	{
 		<MudPopover Open="_isVisible" Duration="@Duration" Delay="@Delay" AnchorOrigin="@_anchorOrigin" TransformOrigin="@_transformOrigin" Class="@Classname" Paper="false">
-				@if (TooltipContent != null)
+                        @if (_isVisible)
+                        {
+                                @if (TooltipContent != null)
 				{
 					@TooltipContent
 				}
@@ -14,6 +16,7 @@
 				{
 					@Text
 				}
+                        }
 		</MudPopover>
 	}
 </div>
